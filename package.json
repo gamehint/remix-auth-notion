@@ -1,5 +1,5 @@
 {
-  "name": "remix-auth-notion",
+  "name": "@gamehint/remix-auth-notion",
   "version": "1.1.0",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
