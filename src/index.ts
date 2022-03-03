@@ -222,15 +222,14 @@ export class NotionStrategy<User> extends Strategy<User, NotionVerifyParams> {
     }
 
     // clientID and clientSecret are used as Basic auth credentials
-    const auth = Buffer.from(`${this.clientID}:${this.clientSecret}`, "utf8");
-
+    let uint8Array = new TextEncoder().encode(`${this.clientID}:${this.clientSecret}`)
     let response = await fetch(this.tokenURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: `Basic ${auth.toString("base64")}`,
-      },
-      body: params,
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Authorization: `Basic ${btoa(String.fromCharCode(...uint8Array))}`,
+        },
+        body: params,
     });
 
     if (!response.ok) {
