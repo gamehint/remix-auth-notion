@@ -65,6 +65,6 @@
   "homepage": "https://github.com/juhanakristian/remix-auth-notion#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juhanakristian/remix-auth-notion.git"
+    "url": "git+https://github.com/gamehint/remix-auth-notion.git"
   }
 }
